@@ -8,6 +8,9 @@ public class AnimalMovement : MonoBehaviour {
 	public float switchtime=1;
 	public Vector3 destination=new Vector3();
 	public float speed=100;
+	public float FeetOffGroundY = 7;
+	
+	
 	// Use this for initialization
 	void Start () {
 	destination=transform.position;
@@ -34,12 +37,31 @@ public class AnimalMovement : MonoBehaviour {
 		direction.Normalize();
 	Vector3 velocity=direction*speed;
 		
-		rigidbody.AddForce(-rigidbody.velocity, ForceMode.VelocityChange);
-		if(to_destination.magnitude>Time.deltaTime*speed)
+		Vector3 velocity_without_y = rigidbody.velocity;
+		velocity_without_y.y = 0;
+		
+		rigidbody.AddForce(-velocity_without_y, ForceMode.VelocityChange);
+		if(to_destination.magnitude>Time.deltaTime*speed && transform.position.y < FeetOffGroundY)
+		{
 			rigidbody.AddForce(velocity, ForceMode.VelocityChange);
+		}
 		SwapTextures();
 	}
-public void onclick(){
+
+	bool IsSelected ()
+	{
+		Selection selection = GetComponent<Selection>();
+		if (selection && selection.Selected)
+			return true;
+		else
+			return false;
+	}
+	
+	public void onclick()
+	{
+		if (!IsSelected())
+			return;
+		
 	Camera camera=Camera.mainCamera;
 		print(Input.mousePosition);
 	//var mousePo = camera.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y,camera.nearClipPlane));

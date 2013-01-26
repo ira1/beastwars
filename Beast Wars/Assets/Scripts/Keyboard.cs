@@ -5,7 +5,16 @@ using System.Collections.Generic;
 public class Keyboard : MonoBehaviour {
 	
 	List<string> SelectedTags = new List<string>();
+	public Transform QPrefab;
+	public Transform QLocation;
 	
+	public Transform WPrefab;
+	public Transform WLocation;
+
+	public Transform EPrefab;
+	public Transform ELocation;
+
+	public Vector3 RandomizeStarLocation = new Vector3(10,10,10);
 	
 	// Use this for initialization
 	void Start () {
@@ -37,6 +46,21 @@ public class Keyboard : MonoBehaviour {
 		{
 			ToggleSelect("Player Kangaroo");
 		}
+		
+		if (Input.GetKeyDown(KeyCode.Q))
+		{
+			CreateAnimal(QPrefab, QLocation);
+		}
+		
+		if (Input.GetKeyDown(KeyCode.W))
+		{
+			CreateAnimal(WPrefab, WLocation);
+		}
+
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			CreateAnimal(EPrefab, ELocation);
+		}
 
 		UpdateSelections();
 		
@@ -62,5 +86,22 @@ public class Keyboard : MonoBehaviour {
 			Selection selection=animal.GetComponent<Selection>();
 			selection.Selected=true;
 		}
+	}
+	
+	
+	void CreateAnimal (Transform prefab, Transform location)
+	{
+		if (!prefab || !location)
+			return;
+		
+		var animal = Instantiate(prefab) as Transform;
+		
+		Vector3 offset;
+		offset.x = Random.Range(0, RandomizeStarLocation.x);
+		offset.y = Random.Range(0, RandomizeStarLocation.y);
+		offset.z = Random.Range(0, RandomizeStarLocation.z);
+		
+		
+		animal.position = location.position + offset;
 	}
 }
