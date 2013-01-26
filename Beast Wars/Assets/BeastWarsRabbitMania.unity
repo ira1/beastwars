@@ -173,6 +173,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c2d8c7cdc2b7f4d8d8e85b08e24ad6, type: 3}
   m_Name: 
+  jumping: {fileID: 2800000, guid: f842fbe24bc4a71429c25cf3de97045c, type: 3}
+  ground: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
+  timetoswap: 0
+  switchtime: 1
   destination: {x: 200, y: 0, z: 300}
   speed: 25
 --- !u!1001 &234790396
@@ -208,6 +212,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9a8f8abe12157084fbfc2eec67afcf89, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9a8f8abe12157084fbfc2eec67afcf89, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9a8f8abe12157084fbfc2eec67afcf89, type: 2}
+      propertyPath: ground
+      value: 
+      objectReference: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
+    - target: {fileID: 11400000, guid: 9a8f8abe12157084fbfc2eec67afcf89, type: 2}
+      propertyPath: jumping
+      value: 
+      objectReference: {fileID: 2800000, guid: f842fbe24bc4a71429c25cf3de97045c, type: 3}
+    - target: {fileID: 11400000, guid: 9a8f8abe12157084fbfc2eec67afcf89, type: 2}
+      propertyPath: switchtime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -436,7 +456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2046115644
 Transform:
   m_ObjectHideFlags: 0
