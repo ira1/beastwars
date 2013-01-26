@@ -10,13 +10,13 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 54: {fileID: 5400000}
   - 135: {fileID: 13500000}
+  - 54: {fileID: 5400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Rabbit
-  m_TagString: Player Rabbit
+  m_Name: Cane Toad
+  m_TagString: Player Toad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 5, z: 250}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 300, y: 5, z: 276}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .159999996, z: 0}
+  m_LocalPosition: {x: 0, y: .180000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -73,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 924bf6b387464c445a135c913b625cd9, type: 2}
+  - {fileID: 2100000, guid: 1e8363b0d534aa6419d54bd3236e0b3f, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -91,7 +91,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 26e442a7ab7da0f4da933ea781e90bb1, type: 2}
+  - {fileID: 2100000, guid: 6cc1404bb851bf347aac83403e0dcdcf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -136,12 +136,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c2d8c7cdc2b7f4d8d8e85b08e24ad6, type: 3}
   m_Name: 
-  jumping: {fileID: 2800000, guid: c1a3a1c2eda64a24c8d86887f83cef76, type: 3}
-  ground: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
+  jumping: {fileID: 2800000, guid: c70f20c5c8a128f4cae50e01bc7978ad, type: 3}
+  ground: {fileID: 2800000, guid: aac500dacfcb3f343b72e6debd8a0fa9, type: 3}
   timetoswap: 0
   switchtime: 1
-  destination: {x: 200, y: 0, z: 300}
-  speed: 50
+  destination: {x: 0, y: 0, z: 0}
+  speed: 25
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,8 +164,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.00000048
-  m_Center: {x: 0, y: -7.62939453e-06, z: 0}
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
