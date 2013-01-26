@@ -6,6 +6,8 @@ TagManager:
   - Player Rabbit
   - Player Kangaroo
   - Player Toad
+  - Enemy
+  - Player Warren
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

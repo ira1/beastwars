@@ -9,11 +9,11 @@ public class AnimalMovement : MonoBehaviour {
 	public Vector3 destination=new Vector3();
 	public float speed=100;
 	public float FeetOffGroundY = 7;
-	
+	public float Health = 100;
 	
 	// Use this for initialization
-	void Start () {
-	destination=transform.position;
+	virtual public void Start () {
+		destination=transform.position;
 	}
 
 	void SwapTextures ()
@@ -28,7 +28,15 @@ public class AnimalMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
+		
+		if (Health <=0)
+		{
+			Destroy(this.gameObject);
+			return;
+		}
+		
+		
 	if(Input.GetMouseButtonDown(0))
 		onclick();
 	Vector3 to_destination=destination-transform.position;
@@ -48,7 +56,7 @@ public class AnimalMovement : MonoBehaviour {
 		SwapTextures();
 	}
 
-	bool IsSelected ()
+	virtual public bool IsSelected ()
 	{
 		Selection selection = GetComponent<Selection>();
 		if (selection && selection.Selected)
@@ -57,7 +65,7 @@ public class AnimalMovement : MonoBehaviour {
 			return false;
 	}
 	
-	public void onclick()
+	virtual public void onclick()
 	{
 		if (!IsSelected())
 			return;
