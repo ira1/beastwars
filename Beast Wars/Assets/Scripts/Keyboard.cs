@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Keyboard : MonoBehaviour {
 	
-	List<string> SelectedTags = new List<string>();
+	List<int> SelectedTags = new List<int>();
 	public Transform QPrefab;
 	public Transform QLocation;
 	
@@ -21,7 +21,7 @@ public class Keyboard : MonoBehaviour {
 	
 	}
 
-	void ToggleSelect (string tag)
+	void ToggleSelect (int tag)
 	{
 		if (SelectedTags.Contains(tag))
 			SelectedTags.Remove(tag);
@@ -34,17 +34,17 @@ public class Keyboard : MonoBehaviour {
 	{
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
-			ToggleSelect("Player Toad");
+			ToggleSelect(1);
 		}
 	
 		if (Input.GetKeyDown(KeyCode.Alpha2))
 		{
-			ToggleSelect("Player Rabbit");
+			ToggleSelect(2);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Alpha3))
 		{
-			ToggleSelect("Player Kangaroo");
+			ToggleSelect(3);
 		}
 		
 		if (Input.GetKeyDown(KeyCode.Q))
@@ -71,7 +71,7 @@ public class Keyboard : MonoBehaviour {
 		var selection_objects = GameObject.FindObjectsOfType(typeof(Selection));
 		foreach( Selection selection in selection_objects)
 		{
-			selection.Selected = SelectedTags.Contains( selection.gameObject.tag );
+			selection.Selected = SelectedTags.Contains( selection.SelectionKey );
 		}
 	}
 

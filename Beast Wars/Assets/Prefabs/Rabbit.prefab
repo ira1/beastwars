@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Rabbit
-  m_TagString: Player Rabbit
+  m_TagString: PlayerAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 5, z: 250}
+  m_LocalPosition: {x: 673.105957, y: 2.22044605e-16, z: 184.882263}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 400002}
@@ -136,12 +136,19 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c2d8c7cdc2b7f4d8d8e85b08e24ad6, type: 3}
   m_Name: 
+  EnemyTag: Enemy
   jumping: {fileID: 2800000, guid: c1a3a1c2eda64a24c8d86887f83cef76, type: 3}
   ground: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
   timetoswap: 0
   switchtime: 1
-  destination: {x: 200, y: 0, z: 300}
+  MoveCommandDestination: {x: 0, y: 0, z: 0}
+  HasMoveCommand: 0
   speed: 50
+  FeetOffGroundY: 7
+  Health: 100
+  SeeEnemyDistance: 0
+  AttackEnemyDistance: 0
+  DamagePerSecond: 20
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   Selected: 0
   Halo: {fileID: 400002}
+  SelectionKey: 2
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

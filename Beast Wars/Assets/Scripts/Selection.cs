@@ -4,6 +4,7 @@ using System.Collections;
 public class Selection : MonoBehaviour {
 	public bool Selected;
 	public Transform Halo;
+	public int SelectionKey = 1;
 	
 	
 	// Update is called once per frame

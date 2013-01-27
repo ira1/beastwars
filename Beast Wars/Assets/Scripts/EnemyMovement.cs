@@ -6,9 +6,6 @@ using System.Linq;
 public class EnemyMovement : AnimalMovement {
 	
 	public Transform Warren;
-	public float SeeEnemyDistance = 100;
-	public float AttackEnemyDistance = 10;
-	public float DamagePerSecond = 50;
 	
 	// Charge towards player warrens
 	// If you see a player animal, move toward it
@@ -21,83 +18,17 @@ public class EnemyMovement : AnimalMovement {
 	
 	public override void Update ()
 	{
-		if (MaybeAttack())
-			return;
-		if (MaybeMoveToPlayerAnimal())
-			return;
+		MaybeDoStuff();
+	}
+
+	public override bool MaybeDoStuff ()
+	{
+		if (!base.MaybeDoStuff ())
+			MoveToWarren();
 		
-		MoveToWarren();
+		return true;
 	}
 	
-	public float DistanceToMeSquared(GameObject go)
-	{
-		Vector3 offset = this.transform.position - go.transform.position;
-		return offset.sqrMagnitude;
-	}
-
-	public bool MaybeAttack ()
-	{
-		var objects = GameObject.FindObjectsOfType(typeof(Selection));
-		float too_far = AttackEnemyDistance * AttackEnemyDistance;
-		
-		var selections = objects.Select( s => (Selection)s);
-		
-		
-		foreach( Selection selection in selections.OrderBy( s =>  this.DistanceToMeSquared(s.gameObject) ))
-		{
-			Vector3 offset = this.transform.position - selection.transform.position;
-			
-			if (offset.sqrMagnitude > too_far)
-				return false;
-
-			Attack (selection.gameObject);
-			return true;
-		}
-		
-		
-		return false;
-	}
-
-	public void Attack (GameObject gameObject)
-	{
-		gameObject.GetComponent<AnimalMovement>().Health -= DamagePerSecond * Time.deltaTime;
-	}
-	
-	public bool MaybeMoveToPlayerAnimal ()
-	{
-		// Find the nearest animal.
-		float closest_distance_sqr = float.MaxValue;
-		GameObject target = null;
-		
-		var animals = GameObject.FindObjectsOfType(typeof(Selection));
-		float too_far = SeeEnemyDistance * SeeEnemyDistance;
-		
-		
-		foreach( Selection selection in animals)
-		{
-			Vector3 offset = transform.position - selection.transform.position;
-			float d2 = offset.sqrMagnitude;
-			if (d2 > too_far)
-				continue;
-			
-			
-			if (d2 < closest_distance_sqr)
-			{
-				closest_distance_sqr = d2;
-				target = selection.gameObject;
-			}
-		}
-		
-		if (target)
-		{
-			destination = target.transform.position;
-			base.Update();
-			return true;
-		}
-		
-		return false;
-		
-	}
 
 	public void MoveToWarren ()
 	{
@@ -113,8 +44,7 @@ public class EnemyMovement : AnimalMovement {
 			
 		}
 		
-		destination = Warren.position;
-		base.Update();
+		MoveTo(Warren.position);
 	}
 
 	
