@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Rabbit
-  m_TagString: Player Rabbit
+  m_TagString: PlayerAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,8 +44,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300, y: 5, z: 250}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
+  m_LocalPosition: {x: 311.97583, y: 5, z: 222.791382}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 400002}
@@ -73,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 924bf6b387464c445a135c913b625cd9, type: 2}
+  - {fileID: 2100000, guid: 82a08158e56d79f44bdd22f686c18367, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -136,12 +136,19 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c2d8c7cdc2b7f4d8d8e85b08e24ad6, type: 3}
   m_Name: 
-  jumping: {fileID: 2800000, guid: c1a3a1c2eda64a24c8d86887f83cef76, type: 3}
-  ground: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
+  EnemyTag: Enemy
+  jumping: {fileID: 2800000, guid: 2e8bdd9e1e0a8cf4a8d97f1123f9f539, type: 3}
+  ground: {fileID: 2800000, guid: 15c530c9ef3aedc41852b4e12b044b55, type: 3}
   timetoswap: 0
   switchtime: 1
-  destination: {x: 200, y: 0, z: 300}
+  MoveCommandDestination: {x: 0, y: 0, z: 0}
+  HasMoveCommand: 0
   speed: 50
+  FeetOffGroundY: 12
+  Health: 100
+  SeeEnemyDistance: 100
+  AttackEnemyDistance: 50
+  DamagePerSecond: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   Selected: 0
   Halo: {fileID: 400002}
+  SelectionKey: 2
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -165,7 +173,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5.00000048
-  m_Center: {x: 0, y: -7.62939453e-06, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

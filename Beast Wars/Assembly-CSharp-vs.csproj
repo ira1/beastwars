@@ -44,10 +44,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AttackCounterUpdate.cs" />
+     <Compile Include="Assets\OnTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\AnimalMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Keyboard.cs" />
      <Compile Include="Assets\Scripts\Selection.cs" />
+     <Compile Include="Assets\Scripts\SupplyCounterUpdate.cs" />
+     <Compile Include="Assets\Scripts\WarrenHealth.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Kangaroo
-  m_TagString: Player Kangaroo
+  m_TagString: PlayerAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 350, y: 5, z: 260}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -73,7 +73,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 40c7a2b127ec86644b5a274b38e8e368, type: 2}
+  - {fileID: 2100000, guid: 59e5f9988bcda1e459ba200a9029207e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -136,12 +136,19 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6c2d8c7cdc2b7f4d8d8e85b08e24ad6, type: 3}
   m_Name: 
-  jumping: {fileID: 2800000, guid: 0db51b7244eb24c49a4f8c2e29666c11, type: 3}
-  ground: {fileID: 2800000, guid: fadfe665521ef1442aa3dfccc59a19de, type: 3}
+  EnemyTag: Enemy
+  jumping: {fileID: 2800000, guid: 5dddd11bb0e368a4ab16b0cd8dd17649, type: 3}
+  ground: {fileID: 2800000, guid: 3add98510a0a3684b8ac70ffd503fb68, type: 3}
   timetoswap: 0
   switchtime: 1
-  destination: {x: 0, y: 0, z: 0}
+  MoveCommandDestination: {x: 0, y: 0, z: 0}
+  HasMoveCommand: 0
   speed: 100
+  FeetOffGroundY: 17
+  Health: 100
+  SeeEnemyDistance: 100
+  AttackEnemyDistance: 50
+  DamagePerSecond: 50
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   Selected: 0
   Halo: {fileID: 400002}
+  SelectionKey: 3
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

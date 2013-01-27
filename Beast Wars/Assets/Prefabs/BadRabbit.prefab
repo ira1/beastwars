@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: BadRabbit
-  m_TagString: Player Rabbit
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,14 +36,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: 70.1641235, y: 5, z: 734.203247}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -72,7 +72,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 924bf6b387464c445a135c913b625cd9, type: 2}
+  - {fileID: 2100000, guid: 79f85b1cec333d340974292d8c46fdef, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -135,18 +135,20 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7306e0fcd36f1a54bb53342ffa5b79f1, type: 3}
   m_Name: 
-  jumping: {fileID: 2800000, guid: c1a3a1c2eda64a24c8d86887f83cef76, type: 3}
-  ground: {fileID: 2800000, guid: dfd7e2973eb831d4cb540022c181ce23, type: 3}
+  EnemyTag: PlayerAnimal
+  jumping: {fileID: 2800000, guid: 24999e65fd13c5441863536c13576816, type: 3}
+  ground: {fileID: 2800000, guid: 448370d9ace1466489d0f6515c923d10, type: 3}
   timetoswap: 0
   switchtime: 1
-  destination: {x: 0, y: 0, z: 0}
-  speed: 50
+  MoveCommandDestination: {x: 0, y: 0, z: 0}
+  HasMoveCommand: 0
+  speed: 25
   FeetOffGroundY: 12
   Health: 100
+  SeeEnemyDistance: 100
+  AttackEnemyDistance: 22
+  DamagePerSecond: 25
   Warren: {fileID: 0}
-  SeeEnemyDistance: 200
-  AttackEnemyDistance: 10
-  DamagePerSecond: 50
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -158,7 +160,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 5.00000048
-  m_Center: {x: 0, y: -7.62939453e-06, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
