@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\AttackCounterUpdate.cs" />
      <Compile Include="Assets\OnTriggerEnter.cs" />
+     <Compile Include="Assets\Scripts\AIOverlord.cs" />
      <Compile Include="Assets\Scripts\AnimalMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Keyboard.cs" />

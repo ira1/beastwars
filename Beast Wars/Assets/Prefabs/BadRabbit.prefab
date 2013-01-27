@@ -44,8 +44,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 70.1641235, y: 5, z: 734.203247}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 70.1641235, y: 5, z: 702.70166}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -143,12 +143,13 @@ MonoBehaviour:
   MoveCommandDestination: {x: 0, y: 0, z: 0}
   HasMoveCommand: 0
   speed: 25
-  FeetOffGroundY: 12
+  FeetOffGroundY: 22
   Health: 100
   SeeEnemyDistance: 100
   AttackEnemyDistance: 22
   DamagePerSecond: 25
   Warren: {fileID: 0}
+  WarrenAttackDistance: 10
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
