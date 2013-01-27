@@ -16,6 +16,7 @@ public class AnimalMovement : MonoBehaviour {
 	public float speed=100;
 	public float FeetOffGroundY = 7;
 	public float Health = 100;
+	public Transform CorpsePrefab;
 	public float SeeEnemyDistance = 100;
 	public float AttackEnemyDistance = 10;
 	public float DamagePerSecond = 50;
@@ -48,6 +49,11 @@ public class AnimalMovement : MonoBehaviour {
 	{
 		if (Health <=0)
 		{
+			if(CorpsePrefab)
+			{
+				var corpse = Instantiate(CorpsePrefab) as Transform;
+				corpse.position = transform.position;
+			}
 			Destroy(this.gameObject);
 			return true;
 		}

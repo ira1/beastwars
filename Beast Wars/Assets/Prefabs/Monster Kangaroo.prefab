@@ -36,7 +36,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 185.739853, y: 5, z: 707.899353}
+  m_LocalPosition: {x: 185.739838, y: 5, z: 475.06073}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 400002}
@@ -72,7 +72,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 36c07c29d00095343bb81c1019a01bbf, type: 2}
+  - {fileID: 2100000, guid: e4edee02b31aef341ba1fb21809c66a1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7306e0fcd36f1a54bb53342ffa5b79f1, type: 3}
   m_Name: 
   EnemyTag: PlayerAnimal
-  jumping: {fileID: 2800000, guid: 58f9e0a8627733d459826bab57c646d7, type: 3}
-  ground: {fileID: 2800000, guid: dc642823fcd0d4f4bb5e40e2df92205e, type: 3}
+  jumping: {fileID: 2800000, guid: c0bb4871b7bcae3449212edbaa648c38, type: 3}
+  ground: {fileID: 2800000, guid: 9b93bdbded0eb7b4b80bdf3fe95a2e3e, type: 3}
   timetoswap: 0
   switchtime: 1
   MoveCommandDestination: {x: 0, y: 0, z: 0}
@@ -145,11 +145,12 @@ MonoBehaviour:
   speed: 50
   FeetOffGroundY: 27
   Health: 100
+  CorpsePrefab: {fileID: 400000, guid: 0a7b14ffd4d6d6845939c71310585f9b, type: 2}
   SeeEnemyDistance: 100
   AttackEnemyDistance: 50
   DamagePerSecond: 25
   Warren: {fileID: 0}
-  WarrenAttackDistance: 10
+  WarrenAttackDistance: 50
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
